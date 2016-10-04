@@ -73,23 +73,31 @@ public class RunDice {
 				//setKeep & six equals true if getNumber equals 6
 				if (die[i].getNumber()==6 ){
 					
-					//declare variable
-					int countSixes=0;
 					die[i].setKeep(true);
-					six=die[i].getKeep();
-					countSixes++;
-					
-					//checking for multiple sixes.
-					/*if(countSixes>1){
-					for(int j=0; die[j].getNumber()==6;j++){
-						die[j].setKeep(false);
-					}}*/
-					
+					six=true;
 				}
+				for (int j=0;j<die.length;j++){
+					//setKeep & five equals true if getNumber equals 5
+					if (die[i].getNumber()==5 && six==true&&five==false){
+						die[i].setKeep(true);
+						five=true;
+						
+					}}
+				for (int j=0;j<die.length;j++){
+					
+					//setKeep & four equals true if getNumber equals 4
+					if (die[i].getNumber()==4 && five==true&&four==false){
+						die[i].setKeep(true);
+						four=true;
+						
+					}}
+				
+					
 				
 				
 				
-				//setKeep & five equals true if getNumber equals 5
+				
+				/*setKeep & five equals true if getNumber equals 5
 				if (die[i].getNumber()==5 && six==true){
 					die[i].setKeep(true);
 					five=die[i].getKeep();
@@ -101,7 +109,7 @@ public class RunDice {
 					die[i].setKeep(true);
 					four=die[i].getKeep();
 					
-				}
+				}*/
 				calculateScore();
 			}
 			
@@ -131,6 +139,7 @@ public class RunDice {
 			break;
 		}
 		JOptionPane.showMessageDialog(null,"You have rolled 3 times and can no longer roll.");
+		finalScore();
 			
 		
 		}
