@@ -80,10 +80,10 @@ public class RunDice {
 					countSixes++;
 					
 					//checking for multiple sixes.
-					if(countSixes>1){
+					/*if(countSixes>1){
 					for(int j=0; die[j].getNumber()==6;j++){
 						die[j].setKeep(false);
-					}}
+					}}*/
 					
 				}
 				
@@ -148,7 +148,7 @@ public class RunDice {
 		int score3=0;
 		
 		//score for roll 0
-		if (rollNum==0){
+		if (rollNum==0&&six==true&&five==true&&four==true){
 			for(int i=0;i<die.length;i++){
 				if(die[i].getKeep()==false){
 					score1=die[i].getNumber()+score1;
@@ -158,7 +158,7 @@ public class RunDice {
 		}
 		
 		//score for roll 1
-		if (rollNum==1){
+		if (rollNum==1&&six==true&&five==true&&four==true){
 			for(int i=0;i<die.length;i++){
 				if(die[i].getKeep()==false){
 					score2=die[i].getNumber()+score2;
@@ -168,7 +168,7 @@ public class RunDice {
 		}
 		
 		//score for roll 2
-		if (rollNum==2){
+		if (rollNum==2&&six==true&&five==true&&four==true){
 			for(int i=0;i<die.length;i++){
 				if(die[i].getKeep()==false){
 					score3=die[i].getNumber()+score3;
