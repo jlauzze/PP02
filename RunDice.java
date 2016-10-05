@@ -71,11 +71,12 @@ public class RunDice {
 			for (int i=0;i<die.length;i++){
 			
 				//setKeep & six equals true if getNumber equals 6
-				if (die[i].getNumber()==6 ){
+				for (int j=0;j<die.length;j++){
+				if (die[i].getNumber()==6 && six==false){
 					
 					die[i].setKeep(true);
 					six=true;
-				}
+				}}
 				for (int j=0;j<die.length;j++){
 					//setKeep & five equals true if getNumber equals 5
 					if (die[i].getNumber()==5 && six==true&&five==false){
@@ -86,30 +87,12 @@ public class RunDice {
 				for (int j=0;j<die.length;j++){
 					
 					//setKeep & four equals true if getNumber equals 4
-					if (die[i].getNumber()==4 && five==true&&four==false){
+					if (die[i].getNumber()==4 && six==true &&five==true&&four==false){
 						die[i].setKeep(true);
 						four=true;
 						
 					}}
 				
-					
-				
-				
-				
-				
-				/*setKeep & five equals true if getNumber equals 5
-				if (die[i].getNumber()==5 && six==true){
-					die[i].setKeep(true);
-					five=die[i].getKeep();
-					
-				}
-				
-				//setKeep & four equals true if getNumber equals 4
-				if (die[i].getNumber()==4 && five==true){
-					die[i].setKeep(true);
-					four=die[i].getKeep();
-					
-				}*/
 				calculateScore();
 			}
 			
