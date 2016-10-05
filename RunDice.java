@@ -72,23 +72,38 @@ public class RunDice {
 			
 				//setKeep & six equals true if getNumber equals 6
 				for (int j=0;j<die.length;j++){
-				if (die[i].getNumber()==6 && six==false){
-					
-					die[i].setKeep(true);
+				if (die[j].getNumber()==6 && six==false){
+					//set to true values
+					die[j].setKeep(true);
 					six=true;
+					
+					//loop through to make sure you don't need to adjust 5, or 4
+					for(int k=0;k<die.length;k++){
+						if(die[k].getNumber()==5&& six==true&&five==false){
+							die[k].setKeep(true);
+							five=true;
+							for(int l=0;l<die.length;l++){
+								if(die[l].getNumber()==4&&six==true &&five==true&&four==false){
+									die[l].setKeep(true);
+									four=true;
+								}
+							}
+						}
+					}
+						
 				}}
 				for (int j=0;j<die.length;j++){
 					//setKeep & five equals true if getNumber equals 5
-					if (die[i].getNumber()==5 && six==true&&five==false){
-						die[i].setKeep(true);
+					if (die[j].getNumber()==5 && six==true&&five==false){
+						die[j].setKeep(true);
 						five=true;
 						
 					}}
 				for (int j=0;j<die.length;j++){
 					
 					//setKeep & four equals true if getNumber equals 4
-					if (die[i].getNumber()==4 && six==true &&five==true&&four==false){
-						die[i].setKeep(true);
+					if (die[j].getNumber()==4 && six==true &&five==true&&four==false){
+						die[j].setKeep(true);
 						four=true;
 						
 					}}
